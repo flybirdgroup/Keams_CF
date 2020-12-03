@@ -55,7 +55,7 @@ max_iter_eps = 500 迭代轮次
 8. readme是整个项目介绍
 
 ### 安装package two ways: 
-####1. 一个一个装
+#### 1. 一个一个装
 pip install pandas -i https://pypi.douban.com/simple
 pip install pandas -i https://pypi.douban.com/simple
 pip install pip install matplotlib -i https://pypi.douban.com/simple
@@ -64,10 +64,10 @@ pip install seaborn -i https://pypi.douban.com/simple
 pip install sklearn -i https://pypi.douban.com/simple
 pip install xlrd -i https://pypi.douban.com/simple
 
-####2. 用requirements来装
+#### 2. 用requirements来装
 pip install -r requirements.txt
 
-####3. 参考文献
+#### 3. 参考文献
 [python聚类分析实现电商用户细分（基于RFM用户价值分析模型）](https://blog.csdn.net/dhr223/article/details/105568355?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~all~sobaiduend~default-3-105568355.nonecase&utm_term=python%E8%81%9A%E7%B1%BB%E5%88%86%E6%9E%90%E5%AE%9E%E7%8E%B0%E7%94%B5%E5%95%86%E7%94%A8%E6%88%B7%E7%BB%86%E5%88%86%E6%BA%90%E4%BB%A3%E7%A0%81&spm=1000.2123.3001.4430)
 
 
