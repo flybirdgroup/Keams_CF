@@ -1,15 +1,15 @@
 # 基于KMeans聚类的协同过滤推荐算法应用
 ## 算法原理
 ### 1. 无监督学习
-![png](./img/unsupervisedML.png)
+![png](img/unsupervisedML.png)
 
 ### 2. 无监督学习--聚类分析
 聚类学习将数据集中的样本分成若干个互不相交的子集（称为簇cluster）。
 保持簇内差异尽可能小而簇间差异尽可能大我们就可以将每个簇映射到一些潜在的类别。
 
-![png](./img/clustering.png)
+![png](img/clustering.png)
 
-![png](./img/clustering2.png)
+![png](img/clustering2.png)
 
 ### 3. 协同过滤
 基于用户的 CF 的基本思想相当简单，基于用户对物品的偏好找到相邻邻居用户，然后将邻居用户喜欢的推荐给当前用户。
@@ -17,7 +17,7 @@
 找到 K 邻居后，根据邻居的相似度权重以及他们对物品的偏好，预测当前用户没有偏好的未涉及物品，计算得到一个排序的物品列表作为推荐。
 给出了一个例子，对于用户 A，根据用户的历史偏好，这里只计算得到一个邻居 – 用户 C，然后将用户 C 喜欢的物品 D 推荐给用户 A。
 
-![png](./img/cf.png)
+![png](img/cf.png)
 
 ## 项目运行 (方法一)
 step1: 在目录终端下,输入命令,启动后
@@ -25,9 +25,9 @@ step1: 在目录终端下,输入命令,启动后
 python app.py
 ```
 step2: 点击http://127.0.0.1:5050/ , 就可以去到交互页面,输入客户id,例如(HK000000580H),就可以得到推荐产品
-![png](./img/web1.png)
+![png](img/web1.png)
 
-![png](./img/web2.png)
+![png](img/web2.png)
 
 ## 项目运行(方法二)
 1. 修改Utilities文件下的parameters.py中的参数
@@ -38,8 +38,8 @@ step2: 点击http://127.0.0.1:5050/ , 就可以去到交互页面,输入客户id
 ### ref1: 参数的调整,如聚类数目,文件路径,模型迭代轮次
 请到Utlities文件下的parameters.py文件,你将会看到以下参数
 ```
-sales_data_path = './data/output/2019.xlsx' #销售数据excel格式
-plt_save_path = './data/opic' 参考K值最好数目图
+sales_data_path = 'data/output/2019.xlsx' #销售数据excel格式
+plt_save_path = 'data/opic' 参考K值最好数目图
 K_value = 3  聚类数目设置
 max_iter_eps = 500 迭代轮次
 ```
