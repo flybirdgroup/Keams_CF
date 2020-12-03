@@ -2,7 +2,7 @@
 ## 算法原理
 ### 1. 无监督学习
 
-![png](../img/unsupervisedML.png)
+![png](./img/unsupervisedML.png)
 
 ### 2. 无监督学习--聚类分析
 聚类学习将数据集中的样本分成若干个互不相交的子集（称为簇cluster）。
