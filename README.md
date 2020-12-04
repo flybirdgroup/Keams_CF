@@ -50,9 +50,13 @@ step1: 在目录终端下,输入命令,启动后
 python app.py
 ```
 step2: 点击http://127.0.0.1:5050/ , 就可以去到交互页面,输入客户id,例如(HK000000580H),就可以得到推荐产品
+同时也可以再下方先输入权重参数,对模型进行训练,训练后,可以参考结果,然后再去推荐产品
 ![png](img/web1.png)
 
 ![png](img/web2.png)
+
+![png](img/web3.png)
+
 
 ## 项目运行(方法二)
 1. 修改Utilities文件下的parameters.py中的参数
