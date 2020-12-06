@@ -8,9 +8,7 @@ from Utilities.parameters import *
 import re
 #pamars
 
-customer_id='HK000000580H'
 from model_trainning import Recommend
-
 
 app = Flask(__name__)
 
@@ -38,7 +36,7 @@ def training():
 		K_value = int(re.findall(r"\d+\.?\d*", K_value)[0])
 		max_iter_eps = int(re.findall(r"\d+\.?\d*", max_iter_eps)[0])
 		print('K',K_value,'mi',max_iter_eps)
-		RES = Recommend(customer_id,sales_data_path,plt_save_path,K_value,max_iter_eps)
+		RES = Recommend('HK000000580H',sales_data_path,plt_save_path,K_value,max_iter_eps)
 		RES.feature_engineering_processing()
 	return render_template('index.html')
 

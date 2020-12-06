@@ -1,6 +1,5 @@
 from math import *
 
-
 class Customers(object):
     def __init__(self, data_dict,userID):
         self.data = data_dict

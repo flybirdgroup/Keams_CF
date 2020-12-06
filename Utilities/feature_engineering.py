@@ -105,13 +105,16 @@ def feature_engineering_processing(K_value,max_iter_eps):
     data = pd.concat([df_all_new_features,ppre], axis=1)
     data.rename({0:u'cluster'},axis=1, inplace=True)
 
-    customer = pd.merge(data[['CUSTOMER','cluster']],df_new, on = 'CUSTOMER',how = 'inner')
+    customer = pd.merge(data[['CUSTOMER','cluster','recency','frequence','money']],df_new, on = 'CUSTOMER',how = 'inner')
     customer.to_csv(cluster_all_path)
     # 基于聚类分类,使用协同过滤算法进行产品推荐给不同客户
 
     for i in range(int(K_value)):
         print(i)
         cluster = customer[customer["cluster"] == i][['CUSTOMER', 'ITEM', 'QTY']]
+        # cluster = customer[customer["cluster"] == i][['CUSTOMER', 'ITEM', 'recency']]
+        # cluster = customer[customer["cluster"] == i][['CUSTOMER', 'ITEM', 'money']]
+        # cluster = customer[customer["cluster"] == i][['CUSTOMER', 'ITEM', 'frequence']]
         path = './data/output/cluster_%s.csv'%(i)
         cluster.groupby(['CUSTOMER','ITEM']).sum().to_csv(path)
         print(path)
