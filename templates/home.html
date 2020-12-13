@@ -37,10 +37,13 @@
 		<br/>
 		<input type="submit" class="btn-info" value="训练">
 	</form>
+	<P>
 	K-Means方法有个经常被人诟病的地方，如何选择K值？也就是要把样本分成多少类呢？如果贸然定一个，会太主观，所以还是要用数据说话。一般采用三个指标：
-
+	</P>
 	Calinski-Harabaz Index。通过计算类中各点与类中心的距离平方和来度量类内的紧密度，通过计算各类中心点与数据集中心点距离平方和来度量数据集的分离度，CH指标由分离度与紧密度的比值得到。从而，CH越大代表着类自身越紧密，类与类之间越分散，即更优的聚类结果。
-	轮廓系数。轮廓系数（Silhouette Coefficient），值是介于 [-1,1] ，越趋近于1代表内聚度和分离度都相对较优。也就是尽量选择更大的轮廓系数。
-	inertia值。kmeans自带的评价方法，越小说明聚类效果越好。
+	<br>轮廓系数。轮廓系数（Silhouette Coefficient），值是介于 [-1,1] ，越趋近于1代表内聚度和分离度都相对较优。也就是尽量选择更大的轮廓系数。</br>
+	<br>inertia值。kmeans自带的评价方法，越小说明聚类效果越好。</br>
+	<br></br>
+    <img src="../static/pic.png" alt="选择合适的cluster个数" height="480" width="1200" />
 </body>
 </html>

@@ -1,0 +1,43 @@
+import pandas as pd
+import numpy as np
+import graphviz
+
+from sklearn import tree
+from sklearn import metrics
+from sklearn.tree import DecisionTreeClassificatier
+from sklearn.model_selection import train_test_split
+from pandas import Series, DataFrame
+
+# Put xlsx file in folder ./
+InputData = pd.read_excel("./Preliminary Data Analysis.xlsx"
+                      ,"Input Data"
+                      ,header = None
+                      ) 
+
+OutputData = pd.read_excel("./Preliminary Data Analysis.xlsx"
+                      ,"Output Data"
+                      ,header = None
+                      ) 
+
+Xtrain, Xtest, Ytrain, Ytest = train_test_split(InputData, OutputData, test_size = 0.3)
+clf = tree.DecisionTreeClassifier(criterion = "gini"
+                          ,random_state = 30
+                          ,splitter = "random"
+                          )
+
+clf = clf.fit(Xtrain, Ytrain)
+result = clf.score(Xtest, Ytest)
+
+print (result)
+
+attribute_name = ["Company Size", "Reputation Negative", "Reputation Positive", "RD Capability", "Development Strategy Direction", "Sustainability"]
+dot_data = tree.export_graphviz(clf
+                           ,feature_names = attribute_name
+                           ,class_names = ["Recommend", "Depends"]
+                           ,filled = True
+                           ,rounded = True
+                           )
+graph = graphviz.source(dot_data)
+print (graph)
+
+#*zip(attribute_name, clf.feature_importances_)
